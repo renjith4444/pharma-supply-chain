@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import Web3 from "web3";
 import SupplyChainABI from "./artifacts/SupplyChain.json";
 import { useNavigate } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 
 function AssignRoles() {
   const navigate = useNavigate();
@@ -186,17 +189,19 @@ function AssignRoles() {
   };
 
   return (
-    <div>
-      <span>
+    <Container>
+      <span style={{ marginRight: "10px"}}>
         <b>Current Account Address:</b> {currentaccount}
       </span>
-      <span
+      
+      <Button
         onClick={redirect_to_home}
-        className="btn btn-outline-danger btn-sm"
+        variant="warning"
+        
       >
         HOME
-      </span>
-      <h4>Raw Material Suppliers:</h4>
+      </Button>
+      <h4>Raw Material Suppliers</h4>
       <form onSubmit={handlerSubmitRMS}>
         <input
           className="form-control-sm"
@@ -204,13 +209,16 @@ function AssignRoles() {
           onChange={handlerChangeAddressRMS}
           placeholder="Ethereum Address"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
+        
         <input
           className="form-control-sm"
           type="text"
           onChange={handlerChangeNameRMS}
           placeholder="Raw Material Supplier Name"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
         <input
           className="form-control-sm"
@@ -218,15 +226,18 @@ function AssignRoles() {
           onChange={handlerChangePlaceRMS}
           placeholder="Based In"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
-        <button
-          className="btn btn-outline-success btn-sm"
+        <Button
+         variant="primary"
           onSubmit={handlerSubmitRMS}
+          style={{marginBottom: "7px" }}
         >
           Register
-        </button>
+        </Button>
       </form>
-      <table className="table table-sm">
+      <Table striped bordered hover>
+      {/* <table className="table table-sm"> */}
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -247,8 +258,8 @@ function AssignRoles() {
             );
           })}
         </tbody>
-      </table>
-      <h4>Manufacturers:</h4>
+      </Table>
+      <h4>Manufacturers</h4>
       <form onSubmit={handlerSubmitMAN}>
         <input
           className="form-control-sm"
@@ -256,6 +267,7 @@ function AssignRoles() {
           onChange={handlerChangeAddressMAN}
           placeholder="Ethereum Address"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
         <input
           className="form-control-sm"
@@ -263,6 +275,7 @@ function AssignRoles() {
           onChange={handlerChangeNameMAN}
           placeholder="Manufacturer Name"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
         <input
           className="form-control-sm"
@@ -270,15 +283,19 @@ function AssignRoles() {
           onChange={handlerChangePlaceMAN}
           placeholder="Based In"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
-        <button
-          className="btn btn-outline-success btn-sm"
+      
+          <Button
+         variant="primary"
           onSubmit={handlerSubmitMAN}
+          style={{marginBottom: "7px" }}
         >
           Register
-        </button>
+        </Button>
       </form>
-      <table className="table table-sm">
+      <Table striped bordered hover>
+      {/* <table className="table table-sm"> */}
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -299,8 +316,8 @@ function AssignRoles() {
             );
           })}
         </tbody>
-      </table>
-      <h4>Distributors:</h4>
+      </Table>
+      <h4>Distributors</h4>
       <form onSubmit={handlerSubmitDIS}>
         <input
           className="form-control-sm"
@@ -308,6 +325,7 @@ function AssignRoles() {
           onChange={handlerChangeAddressDIS}
           placeholder="Ethereum Address"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
         <input
           className="form-control-sm"
@@ -315,6 +333,7 @@ function AssignRoles() {
           onChange={handlerChangeNameDIS}
           placeholder="Distributor Name"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
         <input
           className="form-control-sm"
@@ -322,15 +341,18 @@ function AssignRoles() {
           onChange={handlerChangePlaceDIS}
           placeholder="Based In"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
-        <button
-          className="btn btn-outline-success btn-sm"
-          onSubmit={handlerSubmitDIS}
+        <Button
+         variant="primary"
+         onSubmit={handlerSubmitDIS}
+          style={{marginBottom: "7px" }}
         >
+       
           Register
-        </button>
+        </Button>
       </form>
-      <table className="table table-sm">
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -351,8 +373,8 @@ function AssignRoles() {
             );
           })}
         </tbody>
-      </table>
-      <h4>Retailers:</h4>
+      </Table>
+      <h4>Retailers</h4>
       <form onSubmit={handlerSubmitRET}>
         <input
           className="form-control-sm"
@@ -360,6 +382,7 @@ function AssignRoles() {
           onChange={handlerChangeAddressRET}
           placeholder="Ethereum Address"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
         <input
           className="form-control-sm"
@@ -367,6 +390,7 @@ function AssignRoles() {
           onChange={handlerChangeNameRET}
           placeholder="Retailer Name"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
         <input
           className="form-control-sm"
@@ -374,15 +398,18 @@ function AssignRoles() {
           onChange={handlerChangePlaceRET}
           placeholder="Based In"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
-        <button
-          className="btn btn-outline-success btn-sm"
-          onSubmit={handlerSubmitRET}
+       
+            <Button
+         variant="primary"
+         onSubmit={handlerSubmitRET}
+          style={{marginBottom: "5px" }}
         >
           Register
-        </button>
+        </Button>
       </form>
-      <table className="table table-sm">
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -403,8 +430,8 @@ function AssignRoles() {
             );
           })}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </Container>
   );
 }
 
