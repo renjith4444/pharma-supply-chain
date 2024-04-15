@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 function Home() {
   const navigate = useNavigate();
   const redirect_to_roles = () => {
@@ -16,27 +18,23 @@ function Home() {
     navigate("/track");
   };
   return (
-    <div className="container">
+    <Container>
       <div className="header">
-        <h3>Pharmaceutical Supply Chain Flow :- </h3>
+        <h1>Block Rx Central</h1>
       </div>
       <br />
       <div className="register">
-        <h6>
-          (Note: Here <u>Owner</u> is the person who deployed the smart contract
-          on the blockchain)
-        </h6>
+       
         <h5>
-          Step 1: Owner Should Register Raw material suppliers ,Manufacturers,
-          Distributors and Retailers
+          Owner Should Register Raw material Suppliers, Manufacturers, Distributors and Retailers
         </h5>
-        <h6>(Note: This is a one time step. Skip to step 2 if already done)</h6>
-        <button
+       
+        <Button
           onClick={redirect_to_roles}
-          className="btn btn-outline-primary btn-sm"
+          style={{marginTop: "7px" ,width: "120px"}}
         >
           Register
-        </button>
+        </Button>
       </div>
       <br />
       <div className="ordermedicines">
@@ -70,7 +68,7 @@ function Home() {
           Track Medicines
         </button>
       </div>
-    </div>
+    </Container>
   );
 }
 

@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Web3 from "web3";
 import SupplyChainABI from "./artifacts/SupplyChain.json";
-
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
+import Form from 'react-bootstrap/Form';
 function Track() {
   const navigate = useNavigate();
   useEffect(() => {
@@ -204,23 +207,27 @@ function Track() {
             </h4>
           </article>
         </section>
-        <button
+        <Button
           onClick={() => {
             showTrackTillSold(false);
           }}
-          className="btn btn-outline-success btn-sm"
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         >
           Track Another Item
-        </button>
-        <span
+        </Button>
+       
+        <Button
           onClick={() => {
             navigate("/");
           }}
-          className="btn btn-outline-danger btn-sm"
+          variant="warning"
+        style={{ marginRight: "10px", marginBottom: "10px"}}
         >
           {" "}
           HOME
-        </span>
+        </Button>
+        <br/>
+   
       </div>
     );
   }
@@ -323,23 +330,26 @@ function Track() {
             </p>
           </article>
         </section>
-        <button
+        <Button
           onClick={() => {
             showTrackTillRetail(false);
           }}
-          className="btn btn-outline-success btn-sm"
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         >
           Track Another Item
-        </button>
-        <span
+        </Button>
+        <Button
           onClick={() => {
             navigate("/");
           }}
-          className="btn btn-outline-danger btn-sm"
+          variant="warning"
+        style={{ marginRight: "10px", marginBottom: "10px"}}
         >
           {" "}
           HOME
-        </span>
+        </Button>
+        <br/>
+ 
       </div>
     );
   }
@@ -425,23 +435,26 @@ function Track() {
             </p>
           </article>
         </section>
-        <button
+        <Button
           onClick={() => {
             showTrackTillDistribution(false);
           }}
-          className="btn btn-outline-success btn-sm"
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         >
           Track Another Item
-        </button>
-        <span
+        </Button>
+        <Button
           onClick={() => {
             navigate("/");
           }}
-          className="btn btn-outline-danger btn-sm"
+          variant="warning"
+          style={{ marginRight: "10px", marginBottom: "10px"}}
         >
           {" "}
           HOME
-        </span>
+        </Button>
+        <br/>
+  
       </div>
     );
   }
@@ -510,23 +523,26 @@ function Track() {
             </p>
           </article>
         </section>
-        <button
+        <Button
           onClick={() => {
             showTrackTillManufacture(false);
           }}
-          className="btn btn-outline-success btn-sm"
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         >
           Track Another Item
-        </button>
-        <span
+        </Button>
+        <Button
           onClick={() => {
             navigate("/");
           }}
-          className="btn btn-outline-danger btn-sm"
+          variant="warning"
+          style={{ marginRight: "10px", marginBottom: "10px"}}
         >
           {" "}
           HOME
-        </span>
+        </Button>
+        <br/>
+    
       </div>
     );
   }
@@ -578,23 +594,26 @@ function Track() {
             </p>
           </article>
         </section>
-        <button
+        <Button
           onClick={() => {
             showTrackTillRMS(false);
           }}
-          className="btn btn-outline-success btn-sm"
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         >
           Track Another Item
-        </button>
-        <span
+        </Button>
+        <Button
           onClick={() => {
             navigate("/");
           }}
-          className="btn btn-outline-danger btn-sm"
+          variant="warning"
+        style={{ marginRight: "10px", marginBottom: "10px"}}
         >
           {" "}
           HOME
-        </span>
+        </Button>
+        <br/>
+  
       </div>
     );
   }
@@ -628,23 +647,26 @@ function Track() {
           <hr />
           <br />
           <h5>Medicine Not Yet Processed...</h5>
-          <button
+          <Button
             onClick={() => {
               showTrackTillOrdered(false);
             }}
-            className="btn btn-outline-success btn-sm"
+            style={{ marginRight: "10px", marginBottom: "10px" }}
           >
             Track Another Item
-          </button>
-          <span
+          </Button>
+          <Button
             onClick={() => {
               navigate("/");
             }}
-            className="btn btn-outline-danger btn-sm"
+            variant="warning"
+            style={{ marginRight: "10px", marginBottom: "10px"}}
           >
             {" "}
             HOME
-          </span>
+          </Button>
+          <br/>
+ 
         </article>
         {/* <section className="row">
                     
@@ -684,18 +706,23 @@ function Track() {
   };
 
   return (
-    <div>
+    <>
+    <Container>
+         <h1 style={{textDecoration: "underline"}}>Track Medicnes</h1>
+      <Button
+        onClick={redirect_to_home}
+        variant="warning"
+        style={{ marginRight: "10px"}}
+      >
+       
+        HOME
+      </Button>
       <span>
         <b>Current Account Address:</b> {currentaccount}
       </span>
-      <span
-        onClick={redirect_to_home}
-        className="btn btn-outline-danger btn-sm"
-      >
-        {" "}
-        HOME
-      </span>
-      <table className="table table-sm table-bordered">
+      <br />
+      <br />
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th scope="col">Medicine ID</th>
@@ -716,7 +743,7 @@ function Track() {
             );
           })}
         </tbody>
-      </table>
+      </Table>
       <h5>Enter Medicine ID to Track it</h5>
 
       <form onSubmit={handlerSubmit}>
@@ -726,15 +753,23 @@ function Track() {
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
-        <button
-          className="btn btn-outline-success btn-sm"
-          onSubmit={handlerSubmit}
+        <Button
+         type="submit"
+          onSubmit={()=>{handlerSubmit()}}
+          variant="primary"
+          style={{marginBottom: "7px",width: "120px" }}
         >
           Track
-        </button>
+        </Button>
       </form>
-    </div>
+      
+    </Container>
+    <footer style={{ textAlign: "center", marginTop: "270px" }}>
+    <p>Designed by Renjith R S ⚡</p>
+  </footer>
+  </>
   );
 }
 

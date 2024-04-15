@@ -189,18 +189,20 @@ function AssignRoles() {
   };
 
   return (
+    <>
     <Container>
-      <span style={{ marginRight: "10px"}}>
-        <b>Current Account Address:</b> {currentaccount}
-      </span>
-      
+      <h1 style={{textDecoration: "underline"}}>Register Users</h1>
       <Button
         onClick={redirect_to_home}
         variant="warning"
-        
+        style={{ marginRight: "10px"}}
       >
         HOME
       </Button>
+      <span >
+        <b>Current Account Address:</b> {currentaccount}
+      </span>
+      
       <h4>Raw Material Suppliers</h4>
       <form onSubmit={handlerSubmitRMS}>
         <input
@@ -229,11 +231,12 @@ function AssignRoles() {
           style={{ marginRight: "10px", marginBottom: "10px" }}
         />
         <Button
+         type="submit"
          variant="primary"
           onSubmit={handlerSubmitRMS}
-          style={{marginBottom: "7px" }}
+          style={{marginBottom: "7px",width: "184px"  }}
         >
-          Register
+          Register Supplier
         </Button>
       </form>
       <Table striped bordered hover>
@@ -287,11 +290,12 @@ function AssignRoles() {
         />
       
           <Button
+           type="submit"
          variant="primary"
           onSubmit={handlerSubmitMAN}
-          style={{marginBottom: "7px" }}
+          style={{marginBottom: "7px",width: "184px"  }}
         >
-          Register
+          Register Manufacturer
         </Button>
       </form>
       <Table striped bordered hover>
@@ -344,12 +348,13 @@ function AssignRoles() {
           style={{ marginRight: "10px", marginBottom: "10px" }}
         />
         <Button
+         type="submit"
          variant="primary"
          onSubmit={handlerSubmitDIS}
-          style={{marginBottom: "7px" }}
+          style={{marginBottom: "7px",width: "184px"  }}
         >
        
-          Register
+          Register Distributor
         </Button>
       </form>
       <Table striped bordered hover>
@@ -402,11 +407,12 @@ function AssignRoles() {
         />
        
             <Button
+             type="submit"
          variant="primary"
          onSubmit={handlerSubmitRET}
-          style={{marginBottom: "5px" }}
+          style={{marginBottom: "5px" ,width: "184px" }}
         >
-          Register
+          Register Retailer
         </Button>
       </form>
       <Table striped bordered hover>
@@ -432,6 +438,11 @@ function AssignRoles() {
         </tbody>
       </Table>
     </Container>
+    <br/>
+    <footer style={{ textAlign: "center" }}>
+    <p>Designed by Renjith R S ⚡</p>
+  </footer>
+  </>
   );
 }
 

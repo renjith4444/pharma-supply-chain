@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Web3 from "web3";
 import SupplyChainABI from "./artifacts/SupplyChain.json";
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 
 function AddMed() {
   const navigate = useNavigate();
@@ -90,19 +93,22 @@ function AddMed() {
     }
   };
   return (
-    <div>
+    <>
+    <Container>
+      <h1 style={{textDecoration: "underline"}}>Order Medicines</h1>
+      <Button
+        onClick={redirect_to_home}
+        variant="warning"
+        style={{ marginRight: "10px"}}
+      >
+        HOME
+      </Button>
       <span>
         <b>Current Account Address:</b> {currentaccount}
       </span>
-      <span
-        onClick={redirect_to_home}
-        className="btn btn-outline-danger btn-sm"
-      >
-        {" "}
-        HOME
-      </span>
+     
       <br />
-      <h5>Add Medicine Order:</h5>
+      <h5>Add Medicine Order</h5>
       <form onSubmit={handlerSubmitMED}>
         <input
           className="form-control-sm"
@@ -110,6 +116,7 @@ function AddMed() {
           onChange={handlerChangeNameMED}
           placeholder="Medicine Name"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
         <input
           className="form-control-sm"
@@ -117,17 +124,20 @@ function AddMed() {
           onChange={handlerChangeDesMED}
           placeholder="Medicine Description"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
-        <button
-          className="btn btn-outline-success btn-sm"
+        <Button
+         type="submit"
+          variant="primary"
+          style={{marginBottom: "7px" }}
           onSubmit={handlerSubmitMED}
         >
           Order
-        </button>
+        </Button>
       </form>
       <br />
-      <h5>Ordered Medicines:</h5>
-      <table className="table table-bordered">
+      <h5>Ordered Medicines</h5>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -148,8 +158,13 @@ function AddMed() {
             );
           })}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </Container>
+    <br/>
+    <footer style={{ textAlign: "center", marginTop: "235px" }}>
+    <p>Designed by Renjith R S ⚡</p>
+  </footer>
+  </>
   );
 }
 

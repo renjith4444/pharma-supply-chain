@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Web3 from "web3";
 import SupplyChainABI from "./artifacts/SupplyChain.json";
-
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 function Supply() {
   const navigate = useNavigate();
   useEffect(() => {
@@ -137,25 +139,27 @@ function Supply() {
     }
   };
   return (
-    <div>
+    <>
+    <Container>
+      <h1 style={{textDecoration: "underline"}}>Supply Chain Control</h1>
+      <Button
+        onClick={redirect_to_home}
+        variant="warning"
+        style={{ marginRight: "10px"}}
+      >
+        HOME
+      </Button>
       <span>
         <b>Current Account Address:</b> {currentaccount}
       </span>
-      <span
-        onClick={redirect_to_home}
-        className="btn btn-outline-danger btn-sm"
-      >
-        {" "}
-        HOME
-      </span>
       <h6>
-        <b>Supply Chain Flow:</b>
+        <b>Supply Chain Flow</b>
       </h6>
       <p>
         Medicine Order -&gt; Raw Material Supplier -&gt; Manufacturer -&gt;
         Distributor -&gt; Retailer -&gt; Consumer
       </p>
-      <table className="table table-sm table-dark">
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th scope="col">Medicine ID</th>
@@ -176,10 +180,9 @@ function Supply() {
             );
           })}
         </tbody>
-      </table>
+      </Table>
       <h5>
-        <b>Step 1: Supply Raw Materials</b>(Only a registered Raw Material
-        Supplier can perform this step):-
+        <b>Supply Raw Materials</b>
       </h5>
       <form onSubmit={handlerSubmitRMSsupply}>
         <input
@@ -188,19 +191,21 @@ function Supply() {
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
-        <button
-          className="btn btn-outline-success btn-sm"
+        <Button
+         type="submit"
+           variant="primary"
+           style={{marginBottom: "7px",width: "120px" }}
           onSubmit={handlerSubmitRMSsupply}
         >
           Supply
-        </button>
+        </Button>
       </form>
-      <hr />
+      
       <br />
       <h5>
-        <b>Step 2: Manufacture</b>(Only a registered Manufacturer can perform
-        this step):-
+        <b>Manufacture</b>
       </h5>
       <form onSubmit={handlerSubmitManufacturing}>
         <input
@@ -209,19 +214,22 @@ function Supply() {
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
-        <button
-          className="btn btn-outline-success btn-sm"
+        <Button
+         type="submit"
+          variant="primary"
+          style={{marginBottom: "7px",width: "120px" }}
+         
           onSubmit={handlerSubmitManufacturing}
         >
           Manufacture
-        </button>
+        </Button>
       </form>
-      <hr />
+      
       <br />
       <h5>
-        <b>Step 3: Distribute</b>(Only a registered Distributor can perform this
-        step):-
+        <b>Distribute</b>
       </h5>
       <form onSubmit={handlerSubmitDistribute}>
         <input
@@ -230,19 +238,22 @@ function Supply() {
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
-        <button
-          className="btn btn-outline-success btn-sm"
+        <Button
+         type="submit"
+         variant="primary"
+         style={{marginBottom: "7px" ,width: "120px"}}
+          
           onSubmit={handlerSubmitDistribute}
         >
           Distribute
-        </button>
+        </Button>
       </form>
-      <hr />
+      
       <br />
       <h5>
-        <b>Step 4: Retail</b>(Only a registered Retailer can perform this
-        step):-
+        <b>Retail</b>
       </h5>
       <form onSubmit={handlerSubmitRetail}>
         <input
@@ -251,19 +262,22 @@ function Supply() {
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
-        <button
-          className="btn btn-outline-success btn-sm"
+        <Button
+         type="submit"
+         variant="primary"
+         style={{marginBottom: "7px" ,width: "120px" }}
+         
           onSubmit={handlerSubmitRetail}
         >
           Retail
-        </button>
+        </Button>
       </form>
-      <hr />
+     
       <br />
       <h5>
-        <b>Step 5: Mark as sold</b>(Only a registered Retailer can perform this
-        step):-
+        <b>Mark as Sold</b>
       </h5>
       <form onSubmit={handlerSubmitSold}>
         <input
@@ -272,16 +286,24 @@ function Supply() {
           onChange={handlerChangeID}
           placeholder="Enter Medicine ID"
           required
+          style={{ marginRight: "10px", marginBottom: "10px" }}
         />
-        <button
-          className="btn btn-outline-success btn-sm"
+        <Button
+         type="submit"
+            variant="primary"
+            style={{marginBottom: "7px" ,width: "120px"}}
           onSubmit={handlerSubmitSold}
         >
           Sold
-        </button>
+        </Button>
       </form>
-      <hr />
-    </div>
+     
+    </Container>
+    <br/>
+    <footer style={{ textAlign: "center" }}>
+    <p>Designed by Renjith R S ⚡</p>
+  </footer>
+  </>
   );
 }
 
