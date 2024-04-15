@@ -26,28 +26,26 @@ hr{
 .register {
     background-color:#e5e7eb;
     border: 2px solid #ccc; /* Border color and width */
-  
+    border-radius: 8px; 
     padding: 20px; /* Add padding to create some space inside the border */
 }
 .ordermedicines {
-    background-color: azure;
+    background-color:#e5e7eb;
     border: 2px solid #ccc; /* Border color and width */
-    border-radius: 8px; /* Border radius for rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Shadow effect */
+    border-radius: 8px; 
     padding: 20px; /* Add padding to create some space inside the border */
 }
 .controlchain {
-    background-color: azure;
+    background-color:#e5e7eb;
     border: 2px solid #ccc; /* Border color and width */
-    border-radius: 8px; /* Border radius for rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Shadow effect */
-    padding: 20px; /* Add padding to create some space inside the border */
+    border-radius: 8px; 
+    padding: 20px;
 }
 .track {
+    background-color:#e5e7eb;
     border: 2px solid #ccc; /* Border color and width */
-    border-radius: 8px; /* Border radius for rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Shadow effect */
-    padding: 20px; /* Add padding to create so */
+    border-radius: 8px; 
+    padding: 20px;
 }
   
 

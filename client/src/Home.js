@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import Table from 'react-bootstrap/Table';
+
 function Home() {
   const navigate = useNavigate();
   const redirect_to_roles = () => {
@@ -18,57 +18,63 @@ function Home() {
     navigate("/track");
   };
   return (
+    <>
     <Container>
       <div className="header">
-        <h1>Block Rx Central</h1>
+        <h1>💊 Block Rx Central</h1>
       </div>
       <br />
       <div className="register">
        
-        <h5>
-          Owner Should Register Raw material Suppliers, Manufacturers, Distributors and Retailers
+        <h5 style={{backgroundColor:"#e5e7eb"}}>
+        The Owner Needs to Enlist Suppliers of Raw Materials, Manufacturers, Distributors, and Retailers.
         </h5>
        
         <Button
           onClick={redirect_to_roles}
-          style={{marginTop: "7px" ,width: "120px"}}
+          style={{marginTop: "7px" ,width: "180px"}}
         >
           Register
         </Button>
       </div>
       <br />
       <div className="ordermedicines">
-        <h5>Step 2: Owner should order medicines</h5>
-        <button
+      <h5 style={{backgroundColor:"#e5e7eb"}}>The Owner Should Place an Order for Medicines</h5>
+        <Button
           onClick={redirect_to_addmed}
-          className="btn btn-outline-primary btn-sm"
+          style={{marginTop: "7px" ,width: "180px"}}
         >
           Order Medicines
-        </button>
+        </Button>
       </div>
       <br />
       <div className="controlchain">
-        <h5>Step 3: Control Supply Chain</h5>
-        <button
+        <h5 style={{backgroundColor:"#e5e7eb"}}>Manage the Supply Chain</h5>
+        <Button
           onClick={redirect_to_supply}
-          className="btn btn-outline-primary btn-sm"
+          style={{marginTop: "7px" ,width: "180px"}}
         >
-          Control Supply Chain
-        </button>
+        Control Supply Chain
+        </Button>
       </div>
       <br />
       <div className="track">
-        <h5>
-          <b>Track</b> the medicines:
+        <h5 style={{backgroundColor:"#e5e7eb"}}>
+          Track the Medicine
         </h5>
-        <button
+        <Button
           onClick={redirect_to_track}
-          className="btn btn-outline-primary btn-sm"
+          style={{marginTop: "7px" ,width: "180px"}}
         >
           Track Medicines
-        </button>
+        </Button>
       </div>
     </Container>
+    <br/>
+    <footer style={{ textAlign: "center" }}>
+    <p>Designed by Renjith R S ⚡</p>
+  </footer>
+  </>
   );
 }
 
