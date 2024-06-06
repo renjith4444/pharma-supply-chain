@@ -708,7 +708,7 @@ function Track() {
   return (
     <>
     <Container>
-         <h1 style={{textDecoration: "underline"}}>Track Medicnes</h1>
+         <h1 style={{textDecoration: "underline"}}>Track Medicines</h1>
       <Button
         onClick={redirect_to_home}
         variant="warning"
